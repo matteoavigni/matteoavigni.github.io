@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Avigni - Redirect</title>
+    <!--
+        Questo meta tag reindirizza immediatamente il browser all'URL completo del progetto.
+        Il valore "0" (zero) significa che il reindirizzamento avviene istantaneamente.
+
+        Destinazione: https://matteoavigni.github.io/matteoavigni/
+    -->
+    <meta http-equiv="refresh" content="0; url=https://matteoavigni.github.io/matteoavigni/">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6; /* Sfondo chiaro */
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            color: #1d4ed8; /* Colore primario blu */
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Caricamento del sito...</h1>
+        <p>Se il reindirizzamento non funziona, clicca qui:</p>
+        <p><a href="https://matteoavigni.github.io/matteoavigni/" style="color: #f97316;">Vai al Sito Principale</a></p>
+    </div>
+
+    <script>
+        // Fallback JavaScript per una maggiore compatibilità
+        window.onload = function() {
+            // Aggiunge un piccolo timeout nel caso in cui il meta tag non venga eseguito subito
+            setTimeout(function() {
+                if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                     window.location.replace("https://matteoavigni.github.io/matteoavigni/");
+                }
+            }, 500);
+        };
+    </script>
+</body>
+</html>
