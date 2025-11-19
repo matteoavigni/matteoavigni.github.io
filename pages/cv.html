@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="../assets/images/logo-no-bg.svg" type="image/svg+xml">
+        <link rel="shortcut icon" href="../assets/images/logo-no-bg.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
+        <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" sizes="180x180">
+
+        <title>Curriculum Vitae - Matteo Avigni</title>
+
+        <!-- Stili principali del sito -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- Stili specifici per CV -->
+        <link rel="stylesheet" href="../css/cv-styles.css">
+        <!-- Font Awesome per le icone -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <!-- Navbar identica a index.html -->
+        <header id="main-header">
+            <nav class="container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo-no-bg.svg" alt="Logo Matteo Avigni" width="32" height="32" style="display: block;">
+                    <span class="logo-text">Matteo Avigni</span>
+                </a>
+
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" id="menu-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="nav-menu" id="main-menu">
+                    <ul>
+                        <li><a href="../index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="../index.html#projects" data-i18n="nav-projects">Progetti</a></li>
+                        <li><a href="cv.html" data-i18n="nav-cv">CV</a></li>
+                        <li><a href="../index.html#contact" data-i18n="nav-contact">Contatti</a></li>
+                    </ul>
+                    <div class="nav-tools">
+                        <select id="language-switcher">
+                            <option value="it">🇮🇹 IT</option>
+                            <option value="en">🇬🇧 EN</option>
+                        </select>
+                        <button id="theme-toggle">☀️</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="cv-layout">
+                <!-- Header CV con bottone download integrato -->
+                <div class="cv-header">
+                    <div class="cv-header-content">
+                        <div class="cv-header-text">
+                            <h1 data-i18n="cv-name">Matteo Avigni</h1>
+                            <p data-i18n="cv-role">Software Developer & Data Analyst (Quantitative Finance)</p>
+                        </div>
+                        <a href="#" id="cv-download-link" class="cv-download-button print-hidden">
+                            <i class="fas fa-download"></i>
+                            <span data-i18n="cv-download-btn">Scarica CV</span>
+                        </a>
+                    </div>
+
+                    <div class="cv-contact-info">
+                        <span><i class="fas fa-map-marker-alt"></i> 20134 Milano (IT)</span>
+                        <span><i class="fas fa-phone"></i> +39 347 7318 108</span>
+                        <a href="mailto:avignimatteo@gmail.com"><i class="fas fa-envelope"></i> avignimatteo@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/matteo-avigni-35b2b3140/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/matteoavigni" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Bottoni Download PDF rimossi da qui - ora sono nella navbar -->
+                <div class="cv-content-grid">
+                    <!-- Sidebar (Skills + Lingue) -->
+                    <aside class="cv-sidebar">
+                        <!-- Competenze Informatiche (in sidebar per stampa) -->
+                        <section class="cv-section">
+                            <h2 data-i18n="cv-section-skills">Competenze Informatiche</h2>
+                            <div class="skills-grid">
+                                <span class="skill-tag" data-i18n="skill-python">Python</span>
+                                <span class="skill-tag" data-i18n="skill-sql">SQL</span>
+                                <span class="skill-tag" data-i18n="skill-web">HTML/CSS/JS</span>
+                                <span class="skill-tag" data-i18n="skill-r">R</span>
+                                <span class="skill-tag" data-i18n="skill-gcp">GCP</span>
+                                <span class="skill-tag" data-i18n="skill-powerbi">PowerBI</span>
+                                <span class="skill-tag" data-i18n="skill-finance">Quant Finance</span>
+                            </div>
+                        </section>
+
+                        <!-- Lingue (in sidebar per stampa) -->
+                        <section class="cv-section">
+                            <h2 data-i18n="cv-section-languages">Lingue</h2>
+                            <p>
+                                <strong data-i18n="lang-italian">Italiano:</strong><br>
+                                <span data-i18n="lang-italian-level">Madrelingua</span>
+                            </p>
+                            <p>
+                                <strong data-i18n="lang-english">Inglese:</strong><br>
+                                <span data-i18n="lang-english-level">Fluente</span>
+                            </p>
+                        </section>
+                    </aside>
+
+                    <!-- Contenuto Principale (Esperienza + Formazione) -->
+                    <div class="cv-main-content">
+                        <!-- Esperienza Professionale -->
+                        <section class="cv-section">
+                            <h2 data-i18n="cv-section-experience">Esperienza Professionale</h2>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="exp1-title">Python Developer, Data Intelligence Team</h3>
+                                    <span class="cv-date" data-i18n="exp1-date">Gen 2024 — Corrente</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="exp1-company">Quaestio Capital Management, Milano (IT)</div>
+                                <ul data-i18n="exp1-desc">
+                                    <li>Sviluppo software e analisi dati, focalizzato sul team Data Intelligence.</li>
+                                    <li>Gestione end-to-end dei dati, dall'acquisizione alla visualizzazione.</li>
+                                    <li>Realizzazione di dashboard interattive e reportistica per tutte le aree aziendali.</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="exp2-title">Progetto Personale: Simulatore Quiz Finanziario</h3>
+                                    <span class="cv-date" data-i18n="exp2-date">Apr 2025 — Corrente</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="exp2-company">Sviluppo Autonomo, Milano (IT)</div>
+                                <ul data-i18n="exp2-desc">
+                                    <li>Sviluppo di un'applicazione desktop Tkinter per la simulazione di quiz per consulenti finanziari.</li>
+                                    <li>Implementazione del login utente tramite Google Cloud Run per un'autenticazione sicura e scalabile.</li>
+                                    <li>Utilizzo di Python (frontend) e GCP Cloud Run (backend serverless).</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="exp3-title">Analista Finanziario</h3>
+                                    <span class="cv-date" data-i18n="exp3-date">Mag 2023 — Dic 2023</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="exp3-company">Mediterranean Shipping Company, New York City (US)</div>
+                                <ul data-i18n="exp3-desc">
+                                    <li>Creazione di nuovi report finanziari per il management aziendale utilizzando SQL e PowerBI.</li>
+                                    <li>Lavoro per 7 mesi come Analista Finanziario.</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="exp4-title">Python Developer</h3>
+                                    <span class="cv-date" data-i18n="exp4-date">Dic 2020 — Apr 2023</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="exp4-company">Quaestio Capital Management, Milano (IT)</div>
+                                <ul data-i18n="exp4-desc">
+                                    <li>Automazione di processi interni utilizzando Python.</li>
+                                    <li>Sviluppo di interfacce Flask/JavaScript per interazione backend.</li>
+                                    <li>Sviluppo di dashboard per Investment Management e manutenzione database MySQL (dati mercati finanziari e Time Series).</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="exp5-title">Analista Quantitativo</h3>
+                                    <span class="cv-date" data-i18n="exp5-date">Mar 2019 — Dic 2020</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="exp5-company">Pharus Asset Management, Mendrisio (CH)</div>
+                                <ul data-i18n="exp5-desc">
+                                    <li>Manutenzione e sviluppo di strategie di investimento quantitative.</li>
+                                    <li>Miglioramento dell'efficienza delle procedure interne di gestione tramite Python.</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Formazione -->
+                        <section class="cv-section">
+                            <h2 data-i18n="cv-section-education">Formazione</h2>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="edu1-title">Laurea Magistrale in Ingegneria Matematica (Quantitative Finance)</h3>
+                                    <span class="cv-date" data-i18n="edu1-date">2017 — 2019</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="edu1-institution">Politecnico di Milano, 100/110</div>
+                                <ul data-i18n="edu1-desc">
+                                    <li>Tesi su diversificazione degli asset crypto (in collaborazione con Digital Gold Institute).</li>
+                                    <li>Focus su calcolo stocastico e pricing di strumenti finanziari esotici (Monte Carlo/Formule Chiuse).</li>
+                                </ul>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="edu2-title">Erasmus Student</h3>
+                                    <span class="cv-date" data-i18n="edu2-date">2018</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="edu2-institution">TU Wien (Technical University of Vienna)</div>
+                                <p data-i18n="edu2-desc">Periodo di sei mesi come studente Erasmus.</p>
+                            </div>
+
+                            <div class="cv-entry">
+                                <div class="cv-title-row">
+                                    <h3 data-i18n="edu3-title">Laurea Triennale in Ingegneria Matematica</h3>
+                                    <span class="cv-date" data-i18n="edu3-date">2013 — 2017</span>
+                                </div>
+                                <div class="cv-subtitle" data-i18n="edu3-institution">Politecnico di Milano, 92/110</div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Disclaimer Privacy -->
+                    <section class="cv-disclaimer">
+                        <small data-i18n="cv-consent">
+                            Acconsento al trattamento dei dati personali forniti nel presente curriculum vitae ai sensi del Regolamento UE 2016/679.
+                        </small>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer identico a index.html -->
+        <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/matteo-avigni-35b2b3140/" target="_blank" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://github.com/matteoavigni" target="_blank" aria-label="GitHub Profile">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="mailto:avignimatteo@gmail.com" aria-label="Invia una Email">
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <p data-i18n="footer-text">&copy; 2025 Matteo Avigni</p>
+        </footer>
+
+        <!-- Moduli ES6 -->
+        <script type="module" src="../js/main.js"></script>
+    </body>
+</html>

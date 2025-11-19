@@ -1,0 +1,262 @@
+/* ====================================================================
+   FILE: css/cv-styles.css
+   Stili specifici per la pagina CV (eredita da style.css)
+   ==================================================================== */
+
+/* Layout principale CV - Usa display: contents per evitare il grid sul container */
+.cv-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px; /* Ridotto da 40px */
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-top: 90px; /* Ridotto da 100px */
+    margin-bottom: 40px; /* Ridotto da 60px */
+}
+
+/* Container per il grid (esclude header e footer) */
+.cv-content-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 35px; /* Ridotto da 40px */
+    margin-top: 20px; /* Ridotto da 30px */
+}
+
+/* Sidebar (Skills + Lingue) */
+.cv-sidebar {
+    grid-column: 1;
+}
+
+/* Contenuto principale */
+.cv-main-content {
+    grid-column: 2;
+}
+
+/* Header CV - Full width, fuori dal grid */
+.cv-header {
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 20px;
+    margin-bottom: 0; /* Rimosso margin-bottom, gestito dal grid */
+    width: 100%; /* Assicura full width */
+}
+
+/* Download section - Full width, fuori dal grid */
+.download-section {
+    text-align: center;
+    margin-bottom: 0; /* Gestito dal grid */
+    width: 100%;
+}
+
+.cv-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.cv-header p {
+    font-size: 1.25rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 15px;
+}
+
+/* Info Contatto */
+.cv-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: var(--text-color-secondary);
+    margin-top: 15px;
+}
+
+.cv-contact-info span,
+.cv-contact-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cv-contact-info a {
+    color: var(--accent-color);
+    transition: color 0.2s;
+}
+
+.cv-contact-info a:hover {
+    color: var(--accent-color-hover);
+}
+
+.cv-contact-info i {
+    font-size: 0.9rem;
+}
+
+/* Sezioni CV */
+.cv-section {
+    margin-bottom: 30px; /* Ridotto da 40px */
+}
+
+.cv-section h2 {
+    font-size: 1.5rem; /* Ridotto da 1.75rem */
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 15px; /* Ridotto da 20px */
+    padding-left: 12px;
+    border-left: 5px solid var(--accent-color);
+}
+
+/* Entry singola (esperienza/formazione) */
+.cv-entry {
+    margin-bottom: 20px; /* Ridotto da 30px */
+    padding-bottom: 15px; /* Ridotto da 20px */
+    border-bottom: 1px solid var(--border-color);
+    page-break-inside: avoid;
+}
+
+.cv-entry:last-child {
+    border-bottom: none;
+}
+
+/* Riga titolo con data */
+.cv-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 20px;
+}
+
+.cv-title-row h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    flex: 1;
+}
+
+.cv-date {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--highlight-color);
+    white-space: nowrap;
+    font-style: italic;
+}
+
+/* Sottotitolo (azienda/istituzione) */
+.cv-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color-secondary);
+    margin-bottom: 10px;
+}
+
+/* Liste */
+.cv-entry ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 5px;
+}
+
+.cv-entry li {
+    margin-bottom: 6px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--background-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color-hover);
+}
+
+/* Disclaimer Privacy - Full width */
+.cv-disclaimer {
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    width: 100%; /* Full width */
+    grid-column: 1 / -1; /* Occupa tutte le colonne del grid se dentro */
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+    .cv-layout {
+        margin-top: 80px;
+        padding: 30px 15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    /* Header mobile: stack verticale */
+    .cv-header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .cv-download-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cv-content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cv-sidebar {
+        grid-column: 1;
+    }
+
+    .cv-main-content {
+        grid-column: 1;
+    }
+
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+
+    .cv-header p {
+        font-size: 1.1rem;
+    }
+
+    .cv-title-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .cv-date {
+        font-size: 0.85rem;
+    }
+
+    .cv-contact-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .cv-section h2 {
+        font-size: 1.5rem;
+    }
+}

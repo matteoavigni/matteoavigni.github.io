@@ -1,0 +1,665 @@
+/* CSS RESET / BOX MODEL FIX */
+*, *::before, *::after {
+    /* Impedisce a padding e border di allargare gli elementi */
+    box-sizing: border-box;
+}
+
+/* BLOCCO AGGRESSIVO DELLO SCROLL ORRIZONTALE */
+/* Applica lo scroll-x hidden sia all'html che al body */
+/* Applica il smooth scroll qui, dove è più efficace */
+html {
+    scroll-behavior: smooth;
+    /* Lascia l'overflow-x nascosto solo qui come ultima risorsa */
+    overflow-x: hidden;
+    margin: 0;           /* AZZERA IL MARGINE PREDEFINITO DEL BROWSER */
+    padding: 0;
+}
+
+/*
+ * 1. FONTS (Placeholder, usa Google Fonts a tua scelta)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    /* Impostazioni base del font */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    /* Rimuovi body { ... } da qui */
+
+    /* Sfondi */
+    --background-primary: #ffffff;
+    --background-secondary: #f3f4f6; /* Grigio chiaro per sezioni secondarie */
+
+    /* Testo */
+    --text-color: #1f2937; /* Grigio scuro/Nero per il testo principale */
+    --text-color-secondary: #4b5563; /* Grigio più chiaro per sottotitoli/descrizioni */
+
+    /* Colori di Accento (Netlify-style: Verde/Blue acceso) */
+    --accent-color: #0d9488; /* Verde Teale per CTA/Highlight */
+    --accent-color-hover: #0f766e; /* Verde scuro al passaggio del mouse */
+    --highlight-color: #8b5cf6; /* Viola per enfasi testuale (come in Netlify) */
+
+    /* Bordi e Ombre */
+    --border-color: #e5e7eb;
+    --card-background: #ffffff;
+}
+
+
+/*
+ * 3. DARK MODE - Ridefiniamo le variabili all'interno di un selettore
+ * (Lo applicheremo al <body> con JS quando l'utente clicca il toggle)
+ */
+body.dark-theme {
+    /* Sfondi */
+    --background-primary: #111827; /* Grigio/Nero scuro */
+    --background-secondary: #1f2937; /* Grigio scuro per sezioni secondarie */
+
+    /* Testo */
+    --text-color: #f9fafb; /* Bianco/Bianco sporco per il testo principale */
+    --text-color-secondary: #d1d5db; /* Grigio chiaro per sottotitoli/descrizioni */
+
+    /* Colori di Accento (Rimaniamo coerenti per contrasto) */
+    --accent-color: #10b981; /* Verde che risalta sul fondo scuro */
+    --accent-color-hover: #059669;
+    --highlight-color: #a78bfa; /* Viola che risalta sul fondo scuro */
+
+    /* Bordi e Ombre */
+    --border-color: #374151;
+    --card-background: #1f2937;
+}
+
+/* Applica i colori di base al body e resetta margini/padding */
+body {
+    overflow-x: hidden;
+    background-color: var(--background-primary);
+    color: var(--text-color); /* Ora questa è una variabile definita in :root e dark-theme */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;           /* AZZERA IL MARGINE PREDEFINITO DEL BROWSER */
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+/*
+ * 4. LAYOUT E UTILITY
+ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0; /* Spazio verticale per le sezioni */
+}
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 700;
+}
+
+
+/* ... (Sezione 3 e 4 di style.css del messaggio precedente) ... */
+
+h1 {
+    font-size: 3.5rem; /* Grande per l'impatto! */
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+p.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+p.description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    color: var(--text-color-secondary);
+}
+
+/* ---------------------------------------------------- */
+/* 2. HEADER E NAVIGAZIONE */
+/* ---------------------------------------------------- */
+main {
+    padding-top: 75px; /* Sostituisci questo valore con l'altezza effettiva della tua navbar + un piccolo margine, se necessario */
+}
+
+#main-header {
+    transition: transform 0.3s ease-out; /* Aggiungi questa linea */
+    background-color: var(--background-primary);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;           /* Aggiunto per riempire tutta la larghezza */
+    width: 100%;
+    z-index: 100;
+    padding: 15px 0;
+}
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+/* Aggiungi una classe per bloccare lo scroll del body quando il menu mobile è aperto */
+body.no-scroll {
+    overflow: hidden;
+}
+.logo {
+    display: flex;        /* Abilita Flexbox */
+    align-items: center;  /* Allinea verticalmente SVG e testo */
+    gap: 8px;             /* Spazio tra SVG e testo */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.logo svg {
+    display: block; /* Rimuove lo spazio extra sotto l'SVG */
+}
+#main-header ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+#main-header a {
+    color: var(--text-color-secondary);
+    transition: color 0.2s ease;
+}
+#main-header a:hover {
+    color: var(--accent-color);
+}
+
+/* Stile per il selettore Lingua */
+#language-switcher, #theme-toggle {
+    background: var(--background-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+#theme-toggle {
+    line-height: 1;
+    padding: 7px 10px;
+}
+#language-switcher:hover, #theme-toggle:hover {
+    background: var(--border-color);
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. CALL TO ACTION (CTA) */
+/* ---------------------------------------------------- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--background-primary); /* Testo bianco su CTA */
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: var(--accent-color-hover);
+}
+.cta-button.secondary {
+    background-color: var(--background-secondary);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+.cta-button.secondary:hover {
+    background-color: var(--border-color);
+}
+
+/* ---------------------------------------------------- */
+/* 4. SEZIONE PROGETTI (GRIGLIA E CARD) */
+/* ---------------------------------------------------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.project-card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px); /* Effetto sollevamento, molto Netlify */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.project-title {
+    color: var(--text-color);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.project-tags {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.project-description {
+    color: var(--text-color-secondary);
+    font-size: 1rem;
+}
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+.project-link {
+    font-size: 1rem;
+    font-weight: 600;
+}
+/* Stile per i link dei progetti */
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* STILE EMAIL ALTERNATIVA (SOTTO IL FORM) */
+/* ---------------------------------------------------- */
+
+.contact-alternative {
+    text-align: center;
+    margin-top: 30px; /* Spazio dal form */
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+.contact-alternative p {
+    color: var(--text-color-secondary);
+    margin-bottom: 5px;
+}
+
+.direct-email-cta {
+    font-weight: 700;
+    font-size: 1.15rem; /* Leggermente più piccola rispetto a quando era sopra */
+    color: var(--highlight-color);
+    transition: color 0.2s;
+}
+
+.direct-email-cta:hover {
+    color: var(--accent-color);
+}
+
+/* ---------------------------------------------------- */
+/* FOOTER & SOCIAL LINKS */
+/* ---------------------------------------------------- */
+
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: var(--background-secondary);
+    border-top: 1px solid var(--border-color);
+    margin-top: 60px;
+
+    /* Nuovo: Flexbox per centrare e disporre elementi social */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Spazio tra i link social e il testo copyright */
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: var(--text-color); /* Colore icona */
+    font-size: 1.5rem; /* Dimensione delle icone */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--highlight-color);
+    transform: translateY(-3px); /* Effetto leggero sollevamento */
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--text-color-secondary);
+}
+
+/* ---------------------------------------------------- */
+/* NAVIGAZIONE RESPONSIVE */
+/* ---------------------------------------------------- */
+/* Riporta i tool accanto al menu */
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stile per il pulsante Hamburger */
+.menu-toggle {
+    display: none; /* Nascosto di default su desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 101; /* Sopra ogni cosa */
+}
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Contenitore Menu */
+.nav-menu {
+    display: flex; /* Display flessibile per allineare link e tool */
+    align-items: center;
+    gap: 25px;
+}
+.nav-menu ul {
+    /* Manteniamo lo stile list-style: none; e display: flex; dell'ultima volta */
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+.nav-tools {
+    display: flex;
+    gap: 15px;
+}
+
+/* Media Query: Applica stili specifici per schermi piccoli (es. max 768px) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra l'hamburger */
+    }
+    .nav-menu {
+        /* Trasforma il menu in un pannello a schermo intero o laterale */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Alto come la vista per coprire lo schermo */
+        background-color: var(--background-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* Nascondi il menu di default */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+    .nav-menu.open {
+        transform: translateX(0); /* Mostra il menu quando ha la classe 'open' */
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .nav-tools {
+        flex-direction: column;
+        gap: 20px;
+    }
+    /* Dimensione più grande per i link nel menu mobile */
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+
+    /* Animazione Hamburger (croce) */
+    .menu-toggle.open .icon-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open .icon-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.open .icon-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* ---------------------------------------------------- */
+/* TOOLTIP per Tema Toggle (MODIFICATO per apparire in BASSO) */
+/* ---------------------------------------------------- */
+#theme-toggle {
+    /* Rendi il pulsante una base di posizionamento per il tooltip */
+    position: relative;
+}
+
+#theme-toggle::after {
+    content: attr(data-tooltip);
+
+    /* Posiziona 10px SOTTO il pulsante (non più sopra) */
+    position: absolute;
+    top: calc(100% + 10px);
+    bottom: auto; /* Annulla il bottom precedente, se presente */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Stile del Tooltip (lasciato invariato) */
+    background-color: var(--text-color);
+    color: var(--background-primary);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+
+    /* Nascosto di default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+#theme-toggle:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Freccetta (opzionale ma consigliata) */
+#theme-toggle::before {
+    content: '';
+    position: absolute;
+
+    /* Posiziona 6px SOTTO il pulsante */
+    top: calc(100% + 6px);
+    bottom: auto; /* Annulla il bottom precedente, se presente */
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Inverti la direzione della freccetta (punta in alto) */
+    border: 5px solid transparent;
+    border-bottom-color: var(--text-color); /* Freccetta nera (o colore testo) che punta in SU */
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+#theme-toggle:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------------------------------------------------- */
+/* CORREZIONE MOBILE: NASCONDI TOOLTIP su schermi piccoli */
+/* ---------------------------------------------------- */
+@media (max-width: 767px) {
+    /* Nasconde sia il contenuto del tooltip (::after) che la freccetta (::before) */
+    #theme-toggle::after,
+    #theme-toggle::before {
+        display: none !important;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* CONTACT FORM */
+/* ---------------------------------------------------- */
+.contact-form {
+    max-width: 600px; /* Limita la larghezza del form su desktop */
+    margin: 40px auto; /* Centra il form nella sezione */
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-primary);
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 0 2px rgba(var(--highlight-rgb), 0.3);
+}
+.contact-form textarea {
+    resize: vertical; /* Permette solo il ridimensionamento verticale */
+}
+.form-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+}
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ---------------------------------------------------- */
+/* CONTACT FORM - STILE BOTTONE SUBMIT */
+/* ---------------------------------------------------- */
+
+.contact-form button[type="submit"],
+#submit-button {
+    /* Eredita lo stile del CTA button */
+    display: block; /* Essenziale per width: 100% */
+    width: 100%;
+
+    background-color: var(--accent-color);
+    color: var(--background-primary);
+    padding: 15px 30px;
+    border: none; /* Rimuove il bordo predefinito */
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Assicurati che il testo non venga tagliato */
+    line-height: 1;
+}
+
+.contact-form button[type="submit"]:hover,
+#submit-button:hover {
+    background-color: var(--accent-color-hover);
+}
+
+/* Stile per quando il bottone è disabilitato (durante l'invio) */
+.contact-form button[type="submit"]:disabled {
+    background-color: var(--text-color-secondary); /* Colore più neutro */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.contact-form .cta-button {
+    display: block;
+    width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* 5. SEZIONE SKILLS (GRIGLIA E CARD) */
+/* ---------------------------------------------------- */
+.skills-grid {
+    /* Implementa la griglia (2 o 3 colonne su desktop) */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 200px è la dimensione minima */
+    gap: 20px; /* Spazio tra le card */
+    margin-top: 40px;
+}
+
+.skill-card {
+    /* Stile della card, simile a project-card per coerenza */
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Centra icone e testo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantieni la transizione per l'animazione */
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Effetto sollevamento */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.skill-card i {
+    font-size: 3rem; /* Dimensione grande per l'icona */
+    color: var(--highlight-color); /* Colore viola/accento per l'icona */
+    margin-bottom: 15px;
+    display: block; /* Assicura che sia un blocco per il margine */
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.skill-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color-secondary);
+}

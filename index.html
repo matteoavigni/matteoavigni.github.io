@@ -3,56 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matteo Avigni - Redirect</title>
-    <!--
-        Questo meta tag reindirizza immediatamente il browser all'URL completo del progetto.
-        Il valore "0" (zero) significa che il reindirizzamento avviene istantaneamente.
 
-        Destinazione: https://matteoavigni.github.io/matteoavigni/
-    -->
-    <meta http-equiv="refresh" content="0; url=https://matteoavigni.github.io/matteoavigni/">
+    <link rel="icon" href="assets/images/logo-no-bg.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="assets/images/logo-no-bg.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" sizes="180x180">
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f3f4f6; /* Sfondo chiaro */
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            background-color: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #1d4ed8; /* Colore primario blu */
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>Matteo Avigni | Software & Data Engineering Portfolio</title>
+
+    <!-- Script INLINE per prevenire flash del tema (DEVE essere nel <head> prima dei CSS) -->
+    <script>
+        // Legge il tema salvato e lo applica IMMEDIATAMENTE prima del render
+        (function() {
+            const savedTheme = localStorage.getItem('siteTheme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <h1>Caricamento del sito...</h1>
-        <p>Se il reindirizzamento non funziona, clicca qui:</p>
-        <p><a href="https://matteoavigni.github.io/matteoavigni/" style="color: #f97316;">Vai al Sito Principale</a></p>
-    </div>
 
-    <script>
-        // Fallback JavaScript per una maggiore compatibilità
-        window.onload = function() {
-            // Aggiunge un piccolo timeout nel caso in cui il meta tag non venga eseguito subito
-            setTimeout(function() {
-                if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                     window.location.replace("https://matteoavigni.github.io/matteoavigni/");
-                }
-            }, 500);
-        };
-    </script>
+    <header id="main-header">
+        <nav class="container">
+            <a href="#hero" class="logo">
+                <img src="assets/images/logo-no-bg.svg" alt="Logo Matteo Avigni" width="32" height="32" style="display: block;">
+                <span class="logo-text">Matteo Avigni</span>
+            </a>
+
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" id="menu-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-menu" id="main-menu">
+                <ul>
+                    <li><a href="#projects" data-i18n="nav-projects">Progetti</a></li>
+                    <li><a href="pages/cv.html" data-i18n="nav-cv">CV</a></li>
+                    <li><a href="#contact" data-i18n="nav-contact">Contatti</a></li>
+                </ul>
+                <div class="nav-tools">
+                    <select id="language-switcher">
+                        <option value="it">🇮🇹 IT</option>
+                        <option value="en">🇬🇧 EN</option>
+                    </select>
+                    <button id="theme-toggle">☀️</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <p class="subtitle" data-i18n="hero-subtitle">Software Developer e Data Engineer</p>
+            <h1 data-i18n="hero-title">Trasformo idee complesse in <span class="highlight">Web App e Soluzioni Desktop</span> performanti.</h1>
+            <p class="description" data-i18n="hero-description">Con un solido background in Ingegneria Matematica e Finanza Quantitativa, creo software che gestisce dati complessi e automatizza i processi, dal frontend all'hosting in Cloud.</p>
+            <a href="#contact" class="cta-button" data-i18n="hero-cta">Iniziamo il tuo Progetto</a>
+        </section>
+
+        <section id="skills" class="container">
+            <h2 data-i18n="skills-title">Tecnologie in cui sono specializzato</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Flask, Streamlit, Tkinter, Pandas, NumPy</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL & Database</h3>
+                    <p>MySQL, PostgreSQL, Query Optimization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, Responsive Design</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-google"></i>
+                    <h3>Google Cloud Platform</h3>
+                    <p>Cloud Run, OAuth2.0, Serverless</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>PowerBI, Data Visualization, Reporting</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Quantitative Finance</h3>
+                    <p>Financial Modeling, Risk Analysis, R</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 data-i18n="projects-title">I Miei Progetti Selezionati</h2>
+            <p class="section-subtitle" data-i18n="project-subtitle">Dalle applicazioni desktop per la finanza ai siti web per i servizi professionali.</p>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3 class="project-title" data-i18n="project-quiz-title">Simulatore Quiz Esame Consulente Finanziario</h3>
+                    <p class="project-tags">#Python #Tkinter #GCP #CloudRun #OAuth2.0</p>
+                    <p class="project-description" data-i18n="project-quiz-body">Applicazione desktop per la simulazione del quiz d'esame per diventare consulenti finanziari in Italia. Implementato sistema di autenticazione sicuro con Google Cloud Run e OAuth2.0. Gestione completa del database domande e sistema di tracciamento progressi.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title" data-i18n="project-streamlit-title">Template Streamlit App con Google OAuth</h3>
+                    <p class="project-tags">#Python #Streamlit #OAuth2.0 #GoogleCloud</p>
+                    <p class="project-description" data-i18n="project-streamlit-body">Template completo per applicazioni Streamlit con autenticazione Google OAuth2.0. Include gestione sessioni, protezione route e deploy automatico su Streamlit Community Cloud. Ideale come punto di partenza per progetti data-driven sicuri.</p>
+                    <div class="project-links">
+                        <a href="https://matteoavigni-template.streamlit.app/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title" data-i18n="project-website-title">Portfolio Professionale Statico (Osteopata)</h3>
+                    <p class="project-tags">#HTML #CSS #JavaScript #Netlify</p>
+                    <p class="project-description" data-i18n="project-website-body">Realizzazione completa di un sito web statico, responsive e ottimizzato per i servizi sanitari. Gestione di tutte le fasi, dalla progettazione al deployment finale su Netlify. Un caso di successo per la presenza online di professionisti.</p>
+                    <div class="project-links">
+                        <a href="https://saraberettaosteopata.netlify.app/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2 data-i18n="contact-title">Hai un Progetto in Mente?</h2>
+            <p data-i18n="contact-text">Sono sempre disponibile per discutere nuove idee e sfide. Contattami per una consulenza gratuita.</p>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-i18n="contact-name">Nome completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" data-i18n="contact-message">Il tuo messaggio</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div id="form-status-message" class="form-message" aria-live="polite"></div>
+
+                <button type="submit" id="submit-button" class="cta-button">
+                    <span data-i18n="contact-cta">Invia</span>
+                </button>
+            </form>
+
+            <!-- Email Alternativa -->
+            <div class="contact-alternative">
+                <p data-i18n="contact-alternative-text">Oppure, invia direttamente una mail a:</p>
+                <a href="mailto:avignimatteo@gmail.com" class="direct-email-cta">avignimatteo@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/matteo-avigni-35b2b3140/" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://github.com/matteoavigni" target="_blank" aria-label="GitHub Profile">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:avignimatteo@gmail.com" aria-label="Invia una Email">
+                <i class="fas fa-envelope fa-lg"></i>
+            </a>
+        </div>
+        <p data-i18n="footer-text">&copy; 2025 Matteo Avigni</p>
+    </footer>
+
+    <!-- IMPORTANTE: type="module" per usare import/export ES6 -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
