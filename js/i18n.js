@@ -148,8 +148,8 @@ export const translations = {
         'en': 'Matteo Avigni'
     },
     'cv-role': {
-        'it': 'Software Developer & Data Analyst (Quantitative Finance)',
-        'en': 'Software Developer & Data Analyst (Quantitative Finance)'
+        'it': 'Software Developer & Data Engineer (Quantitative Finance)',
+        'en': 'Software Developer & Data Engineer (Quantitative Finance)'
     },
     'cv-download-btn': {
         'it': 'Scarica CV',
