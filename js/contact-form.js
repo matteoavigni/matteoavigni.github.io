@@ -4,6 +4,7 @@
 // ====================================================================
 
 import { translations, getCurrentLanguage } from './i18n.js';
+import { trackContactFormSubmit } from './analytics.js';
 
 const GCP_FUNCTION_URL = 'https://contact-form-handler-897499388225.europe-west1.run.app';
 
@@ -102,6 +103,9 @@ async function handleSubmit(e, form, statusMessage, submitButton) {
             statusMessage.classList.add('success');
             statusMessage.textContent = translations['form-success'][currentLang];
             console.log('SUCCESSO SERVER:', responseData);
+
+            // 🎯 TRACCIA L'EVENTO IN GOOGLE ANALYTICS
+            trackContactFormSubmit();
         } else {
             // ERRORE
             statusMessage.classList.add('error');

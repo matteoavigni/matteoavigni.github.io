@@ -4,6 +4,7 @@
 // ====================================================================
 
 import { getCurrentLanguage } from './i18n.js';
+import { trackCVDownload } from './analytics.js';
 
 /**
  * Inizializza il bottone download CV
@@ -42,4 +43,9 @@ export function initCVDownload() {
     if (languageSwitcher) {
         languageSwitcher.addEventListener('change', updateDownloadLink);
     }
+
+    // Aggiungi listener per tracciare il download
+    cvDownloadLink.addEventListener('click', () => {
+        trackCVDownload();
+    });
 }
