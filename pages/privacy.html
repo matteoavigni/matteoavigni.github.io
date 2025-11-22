@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="../assets/images/logo-no-bg.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../assets/images/logo-no-bg.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" sizes="180x180">
+
+    <title>Privacy Policy - Matteo Avigni</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Privacy Policy del sito matteoavigni.github.io - Informazioni sul trattamento dei dati personali e uso dei cookie.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Script INLINE per prevenire flash del tema -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('siteTheme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navbar identica alle altre pagine -->
+    <header id="main-header">
+        <nav class="container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo-no-bg.svg" alt="Logo Matteo Avigni" width="32" height="32" style="display: block;">
+                <span class="logo-text">Matteo Avigni</span>
+            </a>
+
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" id="menu-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-menu" id="main-menu">
+                <ul>
+                    <li><a href="../index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="../index.html#projects" data-i18n="nav-projects">Progetti</a></li>
+                    <li><a href="cv.html" data-i18n="nav-cv">CV</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav-contact">Contatti</a></li>
+                </ul>
+                <div class="nav-tools">
+                    <select id="language-switcher">
+                        <option value="it">🇮🇹 IT</option>
+                        <option value="en">🇬🇧 EN</option>
+                    </select>
+                    <button id="theme-toggle">☀️</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 900px; padding: 1px 20px 60px;">
+            <h1 data-i18n="privacy-title">Privacy Policy</h1>
+            <p style="font-style: italic; color: var(--text-color-secondary);">
+                <span data-i18n="privacy-last-update">Ultimo aggiornamento:</span> 22 Novembre 2025
+            </p>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-intro-title">Introduzione</h2>
+                <p data-i18n="privacy-intro-text">
+                    Questo sito è un portfolio personale di Matteo Avigni. La tua privacy è importante per me e raccolgo solo i dati strettamente necessari per fornire i servizi del sito.
+                </p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-data-title">Dati raccolti</h2>
+
+                <h3 data-i18n="privacy-contact-title">1. Form di contatto</h3>
+                <p data-i18n="privacy-contact-intro">Quando mi invii un messaggio tramite il form di contatto, raccolgo:</p>
+                <ul>
+                    <li><strong data-i18n="privacy-contact-name">Nome</strong></li>
+                    <li><strong data-i18n="privacy-contact-email">Email</strong></li>
+                    <li><strong data-i18n="privacy-contact-message">Messaggio</strong></li>
+                </ul>
+                <p>
+                    <strong data-i18n="privacy-purpose">Finalità:</strong>
+                    <span data-i18n="privacy-contact-purpose">Rispondere alle tue richieste di contatto.</span><br>
+                    <strong data-i18n="privacy-legal-basis">Base giuridica:</strong>
+                    <span data-i18n="privacy-contact-legal">Consenso esplicito (invio del form).</span><br>
+                    <strong data-i18n="privacy-retention">Conservazione:</strong>
+                    <span data-i18n="privacy-contact-retention">I dati vengono conservati solo il tempo necessario per gestire la tua richiesta e poi eliminati.</span>
+                </p>
+
+                <h3 data-i18n="privacy-analytics-title">2. Google Analytics</h3>
+                <p data-i18n="privacy-analytics-intro">
+                    Utilizzo Google Analytics 4 per analizzare il traffico del sito in forma aggregata e anonima.
+                </p>
+                <p>
+                    <strong data-i18n="privacy-cookies">Cookie utilizzati:</strong>
+                    <span data-i18n="privacy-analytics-cookies">_ga, _ga_* (cookie tecnici/analitici)</span><br>
+                    <strong data-i18n="privacy-purpose">Finalità:</strong>
+                    <span data-i18n="privacy-analytics-purpose">Comprendere come gli utenti navigano il sito per migliorare l'esperienza.</span><br>
+                    <strong data-i18n="privacy-ip-anon">Anonimizzazione IP:</strong>
+                    <span data-i18n="privacy-analytics-ip">Attiva di default in GA4.</span>
+                </p>
+                <p data-i18n="privacy-analytics-optout">
+                    Puoi disattivare Google Analytics installando il
+                    <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--accent-color);">componente aggiuntivo per la disattivazione di Google Analytics</a>.
+                </p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-sharing-title">Condivisione dati</h2>
+                <p data-i18n="privacy-sharing-text">
+                    I tuoi dati <strong>non vengono mai venduti o condivisi</strong> con terze parti, eccetto Google (per Analytics) come descritto sopra.
+                </p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-rights-title">I tuoi diritti</h2>
+                <p data-i18n="privacy-rights-intro">Ai sensi del GDPR (Regolamento UE 2016/679), hai diritto di:</p>
+                <ul>
+                    <li data-i18n="privacy-right-access">Accedere ai tuoi dati personali</li>
+                    <li data-i18n="privacy-right-delete">Richiederne la cancellazione</li>
+                    <li data-i18n="privacy-right-object">Opporti al trattamento</li>
+                    <li data-i18n="privacy-right-portability">Richiedere la portabilità dei dati</li>
+                </ul>
+                <p data-i18n="privacy-rights-contact">
+                    Per esercitare questi diritti, contattami a:
+                    <a href="mailto:avignimatteo@gmail.com" style="color: var(--accent-color);">avignimatteo@gmail.com</a>
+                </p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-security-title">Sicurezza</h2>
+                <p data-i18n="privacy-security-intro">Implemento misure di sicurezza appropriate per proteggere i tuoi dati, tra cui:</p>
+                <ul>
+                    <li data-i18n="privacy-security-https">Connessione HTTPS</li>
+                    <li data-i18n="privacy-security-cloud">Invio form tramite Google Cloud Function sicura</li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-changes-title">Modifiche alla Privacy Policy</h2>
+                <p data-i18n="privacy-changes-text">
+                    Mi riservo il diritto di aggiornare questa policy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con la data di aggiornamento.
+                </p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2 data-i18n="privacy-contact-title-footer">Contatti</h2>
+                <p data-i18n="privacy-contact-footer">
+                    Per domande sulla privacy o sul trattamento dei dati, contattami a:
+                    <a href="mailto:avignimatteo@gmail.com" style="color: var(--accent-color);">avignimatteo@gmail.com</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer identico -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/matteo-avigni-35b2b3140/" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://github.com/matteoavigni" target="_blank" aria-label="GitHub Profile">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:avignimatteo@gmail.com" aria-label="Invia una Email">
+                <i class="fas fa-envelope fa-lg"></i>
+            </a>
+        </div>
+        <p>
+            <span data-i18n="footer-text">&copy; 2025 Matteo Avigni</span>
+            <span style="margin: 0 8px; color: var(--text-color-secondary);">|</span>
+            <a href="privacy.html" style="color: var(--text-color-secondary); font-size: 0.9rem;" data-i18n="footer-privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>
