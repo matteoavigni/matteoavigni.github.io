@@ -84,6 +84,16 @@ export const translations = {
         'en': 'Complete creation of a responsive, static website optimized for health services. Managed all phases, from design to final deployment on Netlify. A successful case study for professional online presence.'
     },
 
+    // Progetto 4: Simulatore PAC (Nuovo)
+    'project-pac-title': {
+        'it': 'Simulatore PAC ETF & Tassazione',
+        'en': 'ETF PAC & Taxation Simulator'
+    },
+    'project-pac-body': {
+        'it': 'Web App sviluppata in Django che utilizza le API di Yahoo Finance per simulare Piani di Accumulo su ETF. Include un motore fiscale per il calcolo delle tasse italiane (plusvalenze e dividendi) e grafici interattivi per l\'analisi dei drawdown.',
+        'en': 'Django Web App utilizing Yahoo Finance APIs to simulate Accumulation Plans (PAC) on ETFs. Features a tax engine for Italian taxation (capital gains and dividends) and interactive charts for drawdown analysis.'
+    },
+
     // Sezione Contatti
     'contact-title': {
         'it': 'Hai un Progetto in Mente?',
@@ -157,6 +167,33 @@ export const translations = {
     },
 
     // Esperienza Professionale
+
+    // Nuova Esperienza: Progetto PAC
+    'exp-pac-title': {
+        'it': 'Progetto Personale: Simulatore PAC ETF',
+        'en': 'Personal Project: ETF PAC Simulator'
+    },
+    'exp-pac-date': {
+        'it': 'Giu 2025 — Corrente',
+        'en': 'Jun 2025 — Present'
+    },
+    'exp-pac-tech': { // Nota: ho aggiunto una chiave specifica per il sottotitolo tecnologico se vuoi usarla
+        'it': 'Sviluppo Full Stack con Django & Yahoo Finance API',
+        'en': 'Full Stack Development with Django & Yahoo Finance API'
+    },
+    'exp-pac-desc': {
+        'it': [
+            'Sviluppo backend in Django per l\'elaborazione di serie storiche finanziarie ed esecuzione di backtest su PAC.',
+            'Implementazione della logica fiscale italiana per il calcolo netto di dividendi e capital gain.',
+            'Deploy dell\'applicazione su piattaforma cloud Render e integrazione dati real-time.'
+        ],
+        'en': [
+            'Developed a Django backend to process financial time series and execute backtests on accumulation plans.',
+            'Implemented Italian fiscal logic for net calculation of dividends and capital gains.',
+            'Deployed the application on Render cloud platform with real-time data integration.'
+        ]
+    },
+
     'cv-section-experience': {
         'it': 'Esperienza Professionale',
         'en': 'Professional Experience'
@@ -167,7 +204,7 @@ export const translations = {
     },
     'exp1-date': {
         'it': 'Gen 2024 — Corrente',
-        'en': 'Jan 2024 — Current'
+        'en': 'Jan 2024 — Present'
     },
     'exp1-company': {
         'it': 'Quaestio Capital Management, Milano (IT)',
@@ -191,8 +228,8 @@ export const translations = {
         'en': 'Personal Project: Financial Quiz Simulator'
     },
     'exp2-date': {
-        'it': 'Apr 2023 — Mag 2023',
-        'en': 'Apr 2023 — May 2023'
+        'it': 'Apr 2025 — Corrente',
+        'en': 'Apr 2025 — Present'
     },
     'exp2-company': {
         'it': 'Sviluppo Autonomo, Milano (IT)',
