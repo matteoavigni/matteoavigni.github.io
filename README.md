@@ -98,5 +98,3 @@ Matteo Avigni
 ---
 
 ⭐ If you found this project interesting or useful, please consider giving it a star!
-
-**Built with ❤️ by Matteo Avigni**
