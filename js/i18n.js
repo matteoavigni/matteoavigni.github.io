@@ -93,7 +93,10 @@ export const translations = {
         'it': 'Web App sviluppata in Django che utilizza le API di Yahoo Finance per simulare Piani di Accumulo su ETF. Include un motore fiscale per il calcolo delle tasse italiane (plusvalenze e dividendi) e grafici interattivi per l\'analisi dei drawdown.',
         'en': 'Django Web App utilizing Yahoo Finance APIs to simulate Accumulation Plans (PAC) on ETFs. Features a tax engine for Italian taxation (capital gains and dividends) and interactive charts for drawdown analysis.'
     },
-
+    'link-source': {
+        'it': 'Codice Sorgente',
+        'en': 'Source Code'
+    },
     // Sezione Contatti
     'contact-title': {
         'it': 'Hai un Progetto in Mente?',
