@@ -28,6 +28,17 @@
     </head>
 
     <body>
+        <!-- Script INLINE per prevenire flash del tema -->
+        <script>
+            (function() {
+                const savedTheme = localStorage.getItem('siteTheme') || 'dark';
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    document.body.classList.add('dark-theme');
+                }
+            })();
+        </script>
+
         <!-- Navbar identica a index.html -->
         <header id="main-header">
             <nav class="container">
