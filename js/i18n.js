@@ -97,6 +97,7 @@ export const translations = {
         'it': 'Codice Sorgente',
         'en': 'Source Code'
     },
+
     // Sezione Contatti
     'contact-title': {
         'it': 'Hai un Progetto in Mente?',
