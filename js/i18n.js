@@ -54,6 +54,16 @@ export const translations = {
         'en': 'Live Demo'
     },
 
+    // Progetto: Simulatore Quiz Generico
+    'project-quiz-web-title': {
+        'it': 'Simulatore Esami a Quiz (Web App)',
+        'en': 'Quiz Exam Simulator (Web App)'
+    },
+    'project-quiz-web-body': {
+        'it': 'Applicazione web full-stack sviluppata con Node.js ed Express per la simulazione interattiva di esami a quiz. Include un backend custom per la gestione dei dati, una dashboard analitica per il tracciamento delle performance e un\'interfaccia utente responsive e intuitiva.',
+        'en': 'Full-stack web application developed with Node.js and Express for interactive quiz exam simulation. It features a custom data-management backend, an analytical dashboard for performance tracking, and a responsive, intuitive user interface.'
+    },
+
     // Progetto 1: Simulatore Quiz
     'project-quiz-title': {
         'it': 'Simulatore Quiz Esame Consulente Finanziario',
