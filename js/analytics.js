@@ -1,25 +1,32 @@
 // ====================================================================
 // FILE: js/analytics.js
-// Google Analytics 4 Integration
+// Gestione Google Analytics 4 con consenso cookie
 // ====================================================================
 
+let analyticsInitialized = false;
+
 /**
- * Inizializza Google Analytics
- * @param {string} measurementId - Il tuo GA4 Measurement ID
+ * Inizializza Google Analytics 4
+ * @param {string} measurementId - ID di misurazione GA4 (es. 'G-XXXXXXXXXX')
  */
 export function initGoogleAnalytics(measurementId) {
     if (!measurementId) {
-        console.warn('Google Analytics: Measurement ID non fornito');
+        console.warn('⚠️ Google Analytics: Measurement ID non fornito');
         return;
     }
 
-    // Carica lo script gtag.js
+    if (analyticsInitialized) {
+        console.log('✅ Google Analytics già inizializzato');
+        return;
+    }
+
+    // Carica lo script di Google Analytics
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
     document.head.appendChild(script);
 
-    // Inizializza dataLayer e gtag
+    // Inizializza gtag
     window.dataLayer = window.dataLayer || [];
     function gtag() {
         window.dataLayer.push(arguments);
@@ -28,12 +35,24 @@ export function initGoogleAnalytics(measurementId) {
 
     gtag('js', new Date());
     gtag('config', measurementId, {
+        'anonymize_ip': true, // Anonimizza gli IP per privacy
         'page_title': document.title,
         'page_location': window.location.href,
         'page_path': window.location.pathname
     });
 
-    console.log('✅ Google Analytics inizializzato:', measurementId);
+    analyticsInitialized = true;
+    console.log('✅ Google Analytics inizializzato con consenso');
+}
+
+/**
+ * Disabilita Google Analytics
+ */
+export function disableGoogleAnalytics(measurementId) {
+    if (measurementId) {
+        window[`ga-disable-${measurementId}`] = true;
+        console.log('🚫 Google Analytics disabilitato');
+    }
 }
 
 /**

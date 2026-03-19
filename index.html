@@ -34,7 +34,7 @@
 
     <title>Matteo Avigni | Software & Data Engineering Portfolio</title>
 
-    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link rel="stylesheet" href="css/style.css?v=2.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="google-site-verification" content="R96sHkhQIhp3-nJR0sQXPtd2DJ9qZpJ9vWn54useiBY" />
 </head>
@@ -55,7 +55,7 @@
     <header id="main-header">
         <nav class="container">
             <a href="#hero" class="logo">
-                <img src="assets/images/logo-no-bg.svg" alt="Logo Matteo Avigni" width="32" height="32" style="display: block;">
+                <img src="assets/images/logo-no-bg.svg" alt="Matteo Avigni - Software Developer & Data Engineer" width="32" height="32" style="display: block;" loading="eager">
                 <span class="logo-text">Matteo Avigni</span>
             </a>
 
@@ -88,6 +88,17 @@
             <h1 data-i18n="hero-title">Trasformo idee complesse in <span class="highlight">Web App e Soluzioni Desktop</span> performanti.</h1>
             <p class="description" data-i18n="hero-description">Con un solido background in Ingegneria Matematica e Finanza Quantitativa, creo software che gestisce dati complessi e automatizza i processi, dal frontend all'hosting in Cloud.</p>
             <a href="#contact" class="cta-button" data-i18n="hero-cta">Iniziamo il tuo Progetto</a>
+        </section>
+
+        <section id="about" class="container">
+            <h2 data-i18n="about-title">Chi Sono</h2>
+            <div class="about-content">
+                <p data-i18n="about-text">
+                    Ho studiato <strong>Ingegneria Matematica</strong> al Politecnico di Milano. 
+                    Dal 2019 lavoro nel <strong>settore finanziario</strong>, dove mi occupo di sviluppo software e gestione dati. 
+                    La mia passione è creare soluzioni che rendono i dati complessi semplici da usare.
+                </p>
+            </div>
         </section>
 
         <section id="skills" class="container">
@@ -135,11 +146,12 @@
                     <h3 class="project-title" data-i18n="project-quiz-web-title">Simulatore Esami a Quiz (Web App)</h3>
                     <p class="project-tags">#NodeJS #Express #JavaScript #Render</p>
                     <p class="project-description" data-i18n="project-quiz-web-body">
-                        Applicazione web full-stack per la simulazione interattiva di esami a quiz.
+                        Applicazione web full-stack per la simulazione interattiva di esami a quiz. 
+                        Sistema di gestione database con oltre 1000 domande, dashboard analytics per tracciamento progressi, 
+                        e interfaccia responsive ottimizzata per mobile e desktop.
                     </p>
                     <div class="project-links">
                         <a href="https://pro-quiz-simulator.onrender.com/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
-
                     </div>
                 </article>
 
@@ -147,8 +159,9 @@
                     <h3 class="project-title" data-i18n="project-pac-title">Simulatore PAC ETF & Tassazione</h3>
                     <p class="project-tags">#Django #Python #YahooFinance #Render</p>
                     <p class="project-description" data-i18n="project-pac-body">
-                        Web App Django che simula un Piano di Accumulo su ETF utilizzando dati di Yahoo Finance.
-                        Include calcolo tassazione italiana e analisi drawdown.
+                        Web App Django che simula un Piano di Accumulo su ETF utilizzando dati storici reali di Yahoo Finance. 
+                        Calcolo automatico della tassazione italiana su capital gain e dividendi, con analisi dei drawdown storici. 
+                        Elabora oltre 20 anni di dati finanziari per backtest accurati.
                     </p>
                     <div class="project-links">
                         <a href="https://matteoavigni-pac-simulator.onrender.com/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
@@ -163,12 +176,17 @@
                     <h3 class="project-title" data-i18n="project-quiz-title">Simulatore Quiz Esame Consulente Finanziario</h3>
                     <p class="project-tags">#Python #Tkinter #GCP #CloudRun #OAuth2.0</p>
                     <p class="project-description" data-i18n="project-quiz-body">Applicazione desktop per la simulazione del quiz d'esame per diventare consulenti finanziari in Italia. Implementato sistema di autenticazione sicuro con Google Cloud Run e OAuth2.0. Gestione completa del database domande e sistema di tracciamento progressi.</p>
+                    <div class="project-links">
+                        <span class="project-badge" data-i18n="badge-desktop-app">📱 Desktop App</span>
+                    </div>
                 </article>
 
                 <article class="project-card">
                     <h3 class="project-title" data-i18n="project-streamlit-title">Template Streamlit App con Google OAuth</h3>
                     <p class="project-tags">#Python #Streamlit #OAuth2.0 #GoogleCloud</p>
-                    <p class="project-description" data-i18n="project-streamlit-body">Template completo per applicazioni Streamlit con autenticazione Google OAuth2.0. Include gestione sessioni, protezione route e deploy automatico su Streamlit Community Cloud. Ideale come punto di partenza per progetti data-driven sicuri.</p>
+                    <p class="project-description" data-i18n="project-streamlit-body">Template completo per applicazioni Streamlit con autenticazione Google OAuth2.0. 
+                    Include gestione sessioni sicure, protezione route e deploy automatico su Streamlit Community Cloud. 
+                    Riduce il tempo di setup di nuovi progetti data-driven da giorni a minuti.</p>
                     <div class="project-links">
                         <a href="https://matteoavigni-template.streamlit.app/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
                     </div>
@@ -177,7 +195,9 @@
                 <article class="project-card">
                     <h3 class="project-title" data-i18n="project-website-title">Portfolio Professionale Statico (Osteopata)</h3>
                     <p class="project-tags">#HTML #CSS #JavaScript #Netlify</p>
-                    <p class="project-description" data-i18n="project-website-body">Realizzazione completa di un sito web statico, responsive e ottimizzato per i servizi sanitari. Gestione di tutte le fasi, dalla progettazione al deployment finale su Netlify. Un caso di successo per la presenza online di professionisti.</p>
+                    <p class="project-description" data-i18n="project-website-body">Realizzazione completa di un sito web statico, responsive e ottimizzato SEO per i servizi sanitari. 
+                    Gestione di tutte le fasi, dalla progettazione UX al deployment su Netlify con CI/CD. 
+                    Performance score 95+ su Google Lighthouse, tempo di caricamento < 1 secondo.</p>
                     <div class="project-links">
                         <a href="https://saraberettaosteopata.netlify.app/" class="project-link" target="_blank" data-i18n="link-demo">Demo Live</a>
                     </div>
@@ -239,7 +259,24 @@
         </p>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <span data-i18n="cookie-text">
+                    Questo sito utilizza cookie tecnici e Google Analytics per migliorare l'esperienza utente. 
+                    Continuando la navigazione accetti l'uso dei cookie.
+                </span>
+                <a href="pages/privacy.html" data-i18n="cookie-learn-more">Scopri di più</a>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" id="cookie-accept" data-i18n="cookie-accept">Accetta</button>
+                <button class="cookie-btn decline" id="cookie-decline" data-i18n="cookie-decline">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
     <!-- IMPORTANTE: type="module" per usare import/export ES6 -->
-    <script type="module" src="js/main.js?v=2.0"></script>
+    <script type="module" src="js/main.js?v=2.1"></script>
 </body>
 </html>

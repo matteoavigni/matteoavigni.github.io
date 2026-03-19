@@ -74,11 +74,8 @@ async function handleSubmit(e, form, statusMessage, submitButton) {
         message: messageInput ? messageInput.value.trim() : ''
     };
 
-    console.log('Payload Inviato:', payload);
-
     // Validazione campi vuoti
     if (!payload.name || !payload.email || !payload.message) {
-        console.error("Campi obbligatori vuoti");
         setFormState(form, false);
         submitButton.disabled = false;
         statusMessage.classList.add('error');
@@ -102,7 +99,6 @@ async function handleSubmit(e, form, statusMessage, submitButton) {
             // SUCCESSO
             statusMessage.classList.add('success');
             statusMessage.textContent = translations['form-success'][currentLang];
-            console.log('SUCCESSO SERVER:', responseData);
 
             // 🎯 TRACCIA L'EVENTO IN GOOGLE ANALYTICS
             trackContactFormSubmit();
@@ -111,13 +107,11 @@ async function handleSubmit(e, form, statusMessage, submitButton) {
             statusMessage.classList.add('error');
             const serverErrorMsg = responseData.message || translations['form-error'][currentLang];
             statusMessage.textContent = `Errore ${response.status}: ${serverErrorMsg}`;
-            console.error('ERRORE SERVER:', responseData);
         }
     } catch (error) {
         // 5. Errori di rete
         statusMessage.classList.add('error');
         statusMessage.textContent = translations['form-network-error'][currentLang];
-        console.error('ERRORE RETE/JSON:', error);
     } finally {
         // 6. Configura bottone come RESET
         submitButton.disabled = false;
@@ -137,16 +131,7 @@ export function initContactForm() {
     const submitButton = document.getElementById('submit-button');
 
     if (!contactForm || !submitButton || !statusMessage) {
-        console.log('Form di contatto non trovato in questa pagina');
         return;
-    }
-
-    // Verifica che ci siano i campi necessari
-    const inputCount = contactForm.querySelectorAll('input[name], textarea[name]').length;
-    console.log(`Trovati ${inputCount} campi di input nel form`);
-
-    if (inputCount < 3) {
-        console.error("ERRORE: Meno di 3 campi trovati nel form");
     }
 
     // Imposta il testo iniziale del pulsante

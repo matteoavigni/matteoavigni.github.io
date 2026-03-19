@@ -1,0 +1,25 @@
+# IDE e Editor (Fondamentale per il tuo caso)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Log e file temporanei
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.logs
+*.log
+
+# Cartelle di dipendenze (se mai userai npm/node)
+node_modules/
+dist/
+build/
+
+# Eventuali file di ambiente locali con dati sensibili
+.env
+.env.local

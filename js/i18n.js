@@ -31,6 +31,16 @@ export const translations = {
         'en': 'Start Your Project'
     },
 
+    // Sezione About
+    'about-title': {
+        'it': 'Chi Sono',
+        'en': 'About Me'
+    },
+    'about-text': {
+        'it': 'Ho studiato <strong>Ingegneria Matematica</strong> al Politecnico di Milano. Dal 2019 lavoro nel <strong>settore finanziario</strong>, dove mi occupo di sviluppo software e gestione dati. La mia passione è creare soluzioni che rendono i dati complessi semplici da usare.',
+        'en': 'I studied <strong>Mathematical Engineering</strong> at Politecnico di Milano. Since 2019, I\'ve been working in the <strong>financial sector</strong>, focusing on software development and data management. My passion is creating solutions that make complex data simple to use.'
+    },
+
     // Sezione Skills
     'skills-title': {
         'it': 'Tecnologie in cui sono specializzato',
@@ -60,8 +70,8 @@ export const translations = {
         'en': 'Quiz Exam Simulator (Web App)'
     },
     'project-quiz-web-body': {
-        'it': 'Applicazione web full-stack sviluppata con Node.js ed Express per la simulazione interattiva di esami a quiz. Include un backend custom per la gestione dei dati, una dashboard analitica per il tracciamento delle performance e un\'interfaccia utente responsive e intuitiva.',
-        'en': 'Full-stack web application developed with Node.js and Express for interactive quiz exam simulation. It features a custom data-management backend, an analytical dashboard for performance tracking, and a responsive, intuitive user interface.'
+        'it': 'Applicazione web full-stack per la simulazione interattiva di esami a quiz. Sistema di gestione database con oltre 1000 domande, dashboard analytics per tracciamento progressi, e interfaccia responsive ottimizzata per mobile e desktop.',
+        'en': 'Full-stack web application for interactive quiz exam simulation. Database management system with over 1000 questions, analytics dashboard for progress tracking, and responsive interface optimized for mobile and desktop.'
     },
 
     // Progetto 1: Simulatore Quiz
@@ -80,8 +90,8 @@ export const translations = {
         'en': 'Streamlit App Template with Google OAuth'
     },
     'project-streamlit-body': {
-        'it': 'Template completo per applicazioni Streamlit con autenticazione Google OAuth2.0. Include gestione sessioni, protezione route e deploy automatico su Streamlit Community Cloud. Ideale come punto di partenza per progetti data-driven sicuri.',
-        'en': 'Complete template for Streamlit applications featuring Google OAuth2.0 authentication. Includes session management, route protection, and automatic deployment on Streamlit Community Cloud. Ideal starting point for secure, data-driven projects.'
+        'it': 'Template completo per applicazioni Streamlit con autenticazione Google OAuth2.0. Include gestione sessioni sicure, protezione route e deploy automatico su Streamlit Community Cloud. Riduce il tempo di setup di nuovi progetti data-driven da giorni a minuti.',
+        'en': 'Complete template for Streamlit applications with Google OAuth2.0 authentication. Includes secure session management, route protection, and automatic deployment on Streamlit Community Cloud. Reduces setup time for new data-driven projects from days to minutes.'
     },
 
     // Progetto 3: Sito Portfolio (Osteopata)
@@ -90,8 +100,8 @@ export const translations = {
         'en': 'Static Professional Portfolio (Osteopath)'
     },
     'project-website-body': {
-        'it': 'Realizzazione completa di un sito web statico, responsive e ottimizzato per i servizi sanitari. Gestione di tutte le fasi, dalla progettazione al deployment finale su Netlify. Un caso di successo per la presenza online di professionisti.',
-        'en': 'Complete creation of a responsive, static website optimized for health services. Managed all phases, from design to final deployment on Netlify. A successful case study for professional online presence.'
+        'it': 'Realizzazione completa di un sito web statico, responsive e ottimizzato SEO per i servizi sanitari. Gestione di tutte le fasi, dalla progettazione UX al deployment su Netlify con CI/CD. Performance score 95+ su Google Lighthouse, tempo di caricamento < 1 secondo.',
+        'en': 'Complete creation of a static, responsive, and SEO-optimized website for health services. Managed all phases, from UX design to deployment on Netlify with CI/CD. Performance score 95+ on Google Lighthouse, loading time < 1 second.'
     },
 
     // Progetto 4: Simulatore PAC (Nuovo)
@@ -100,12 +110,16 @@ export const translations = {
         'en': 'ETF PAC & Taxation Simulator'
     },
     'project-pac-body': {
-        'it': 'Web App sviluppata in Django che utilizza le API di Yahoo Finance per simulare Piani di Accumulo su ETF. Include un motore fiscale per il calcolo delle tasse italiane (plusvalenze e dividendi) e grafici interattivi per l\'analisi dei drawdown.',
-        'en': 'Django Web App utilizing Yahoo Finance APIs to simulate Accumulation Plans (PAC) on ETFs. Features a tax engine for Italian taxation (capital gains and dividends) and interactive charts for drawdown analysis.'
+        'it': 'Web App Django che simula un Piano di Accumulo su ETF utilizzando dati storici reali di Yahoo Finance. Calcolo automatico della tassazione italiana su capital gain e dividendi, con analisi dei drawdown storici. Elabora oltre 20 anni di dati finanziari per backtest accurati.',
+        'en': 'Django Web App that simulates ETF Accumulation Plans using real historical data from Yahoo Finance. Automatic calculation of Italian taxation on capital gains and dividends, with historical drawdown analysis. Processes over 20 years of financial data for accurate backtesting.'
     },
     'link-source': {
-        'it': 'Codice Sorgente',
+        'it': 'Codice',
         'en': 'Source Code'
+    },
+    'badge-desktop-app': {
+        'it': '📱 Desktop App',
+        'en': '📱 Desktop App'
     },
 
     // Sezione Contatti
@@ -465,6 +479,24 @@ export const translations = {
     'footer-privacy': {
         'it': 'Privacy Policy',
         'en': 'Privacy Policy'
+    },
+
+    // Cookie Banner
+    'cookie-text': {
+        'it': 'Questo sito utilizza cookie tecnici e Google Analytics per migliorare l\'esperienza utente. Continuando la navigazione accetti l\'uso dei cookie.',
+        'en': 'This site uses technical cookies and Google Analytics to improve user experience. By continuing to browse, you accept the use of cookies.'
+    },
+    'cookie-learn-more': {
+        'it': 'Scopri di più',
+        'en': 'Learn more'
+    },
+    'cookie-accept': {
+        'it': 'Accetta',
+        'en': 'Accept'
+    },
+    'cookie-decline': {
+        'it': 'Rifiuta',
+        'en': 'Decline'
     },
 
     // === PRIVACY POLICY PAGE ===
