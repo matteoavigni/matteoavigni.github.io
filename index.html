@@ -40,15 +40,19 @@
 </head>
 <body>
 
-    <!-- Script INLINE per prevenire flash del tema (DEVE essere nel <head> prima dei CSS) -->
+    <!-- Script INLINE per prevenire flash del tema -->
     <script>
-        // Legge il tema salvato e lo applica IMMEDIATAMENTE prima del render
         (function() {
             const savedTheme = localStorage.getItem('siteTheme') || 'dark';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark');
-                document.body.classList.add('dark-theme');
             }
+            // Applica la classe al body quando è disponibile
+            document.addEventListener('DOMContentLoaded', function() {
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                }
+            });
         })();
     </script>
 

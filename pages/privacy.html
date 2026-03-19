@@ -27,8 +27,13 @@
             const savedTheme = localStorage.getItem('siteTheme') || 'dark';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark');
-                document.body.classList.add('dark-theme');
             }
+            // Applica la classe al body quando è disponibile
+            document.addEventListener('DOMContentLoaded', function() {
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                }
+            });
         })();
     </script>
 
