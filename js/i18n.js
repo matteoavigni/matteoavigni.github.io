@@ -64,6 +64,16 @@ export const translations = {
         'en': 'Live Demo'
     },
 
+    // Progetto: MaternaWeek
+    'project-maternaweek-title': {
+        'it': 'MaternaWeek — Calcolatore Settimane di Gravidanza',
+        'en': 'MaternaWeek — Pregnancy Week Calculator'
+    },
+    'project-maternaweek-body': {
+        'it': 'Progressive Web App per ostetriche professioniste. Calcolo rapido e intuitivo delle settimane di gravidanza con calendario visuale a 40 settimane, supporto offline e installazione su smartphone. Architettura single-file, zero dipendenze esterne.',
+        'en': 'Progressive Web App for professional midwives. Fast and intuitive pregnancy week calculation with a 40-week visual calendar, offline support, and smartphone installation. Single-file architecture, zero external dependencies.'
+    },
+
     // Progetto: Simulatore Quiz Generico
     'project-quiz-web-title': {
         'it': 'Simulatore Esami a Quiz (Web App)',
